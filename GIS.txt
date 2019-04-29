@@ -1,0 +1,17 @@
+GIS.txt
+
+coordinate systems
+WGS84
+NAD27
+
+projections
+Robinson
+Patterson
+
+
+
+
+
+
+
+.
