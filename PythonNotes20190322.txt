@@ -10,11 +10,56 @@ You can install Python packages with
   pip3 install <package>
 They will install into the site-package directory
   /usr/local/lib/python3.7/site-packages
-.
+# show all python packages installed in the environment
+pip3 list
 
 
 
 
+
+array
+-----
+# Arrays:
+# can be more efficient.
+# can only be used if the data is all of the same type
+from array import array
+arr1 = array('i', [2, 4, 6, 8, 10, 12, 14, 16, 18, 20])
+# 'i' is for integer data https://docs.python.org/3/library/array.html?highlight=array
+print(ar)
+print(ar.typecode)
+# integer data takes 4 bytes per item
+print("Array 1 item size", ar.itemsize)
+# add data to an array
+ar.insert(0,0)
+ar.append(22)
+ar.extend([24,26,28])
+# iterate over an array
+for i, elem in enumerate(ar):
+    ar[i] = elem * 2
+print(ar)
+# Try to add a non-integer number to the array
+# ar.insert(0, 1.25)
+### This failed with error "TypeError: integer argument expected, got float"
+# Create an array to hold bytes instead of ints
+arr2 = array('B', [18, 102, 182, 56, 89, 5, 254, 32, 64, 50])
+print(arr2)
+print(arr2.typecode)
+print("Array 2 item size: ", arr2.itemsize)
+# try to add an item that's out of range
+# (bytes can only be 0 to 255)
+arr2.append(256)
+### This failed with the error "OverflowError: unsigned byte integer is greater than maximum"
+# also try
+array.fromlist()
+array.tolist()
+array.tofile()
+
+
+lambda function
+---------------
+lambda p:p.price
+lambda p:p.weight
+lambda p:p.discountPrice()
 
 
 sort data
@@ -79,7 +124,6 @@ print("\nUse itemgetter to retrieve value located at specific index for each tup
 inventory = [("Widget A", 5), ("Widget B", 2), ("Widget C", 4),
              ("Widget D", 7), ("Widget E", 4)]
 print(sorted(inventory, key=itemgetter(1)))
-
 
 
 strings
