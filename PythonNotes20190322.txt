@@ -1,0 +1,259 @@
+PythonNotes.txt
+
+python --version
+python3 --version
+brew install python3
+
+python3
+>>>
+You can install Python packages with
+  pip3 install <package>
+They will install into the site-package directory
+  /usr/local/lib/python3.7/site-packages
+.
+
+
+
+
+
+
+sort data
+---------
+# sort data with sorted() for simple numbers and strings
+testScores = [82, 67, 94, 73, 79, 86, 58, 91, 89, 71, 88, 77, 84]
+print(sorted(testScores))
+print(sorted(testScores, reverse=True))
+# for more complex data, what property do we sort on? key parameter
+###
+class Product():
+    def __init__(self, name, price, weight, discount):
+        self.name = name
+        self.price = price
+        self.weight = weight
+        self.discount = discount
+
+    def __repr__(self):
+        return repr((self.name, self.price, self.weight))
+
+    def discountPrice(self):
+        return self.price - (self.price * self.discount)
+
+prodList = [
+    Product("Widget", 50, 10, 0.05),
+    Product("Doohickey", 40, 8, 0.15),
+    Product("Thingamabob", 35, 12, 0.0),
+    Product("Gadget", 65, 7, 0.20)
+]
+
+def priceSort(product):
+    return product.price
+
+print(sorted(prodList, key=priceSort))
+###
+# inline lambda function to sort on a key parameter
+print(sorted(prodList, key=lambda p:p.price))
+# inline lambda function calling a class method for key
+print(sorted(prodList, key=lambda p:p.discountPrice()))
+# Python maintains sort stability.
+# leverage sort stability in incrementally refining sort
+prodList = [
+    Product("Doohickey", 40, 10, 0.15), # additional object, weight is 10 vice 8
+  # is the line added for demonstration
+# 1: descending by price, 2: sort ascending by weight
+# 2ndary sort first,
+result = sorted(prodList, key=lambda p:p.weight)
+# print(result)
+print(sorted(result, key=lambda p:p.price, reverse=True))
+# Or, more suscinctly,
+print(sorted(sorted(prodList, key=lambda p:p.weight), key=lambda p:p.price, reverse=True))
+# But additionally, Python provides operators that perform these lambda functions' jobs.
+from operator import attrgetter, methodcaller, itemgetter
+# attrgetter() retrieves a given attribute or property from an object
+# itemgetter() retrieves an item at a given index in a collection
+# methodcaller() calls the given method on the object
+print("Using the attrgetter method:")
+print(sorted(prodList, key=attrgetter("weight"), reverse=True))
+print("\nUsing methodcaller to invoke a method:")
+print(sorted(prodList, key=methodcaller("discountPrice")))
+print("\nUse itemgetter to retrieve value located at specific index for each tuple in the list:")
+inventory = [("Widget A", 5), ("Widget B", 2), ("Widget C", 4),
+             ("Widget D", 7), ("Widget E", 4)]
+print(sorted(inventory, key=itemgetter(1)))
+
+
+
+strings
+-------
+# string tests
+string.startswith("")
+string.endswith("")
+# string searches
+string.find(""")
+string.rfind("")
+string.count("")
+# string manipulations
+string.replace("", "")
+string.upper()
+string.lower()
+" ".join(["The", "easter", "egg", "is", "for", "Miranda"])
+"\n".join(["Amy", "John", "George"])
+# pipe delimited
+print("Norwax, Inc|5826 S. Westgate Rd|Penton|CO|84632".split("|"))
+print("|".join(["09817234987234","34.97","2","2019-04-16'T'09:57:01.528Z","1"]))
+####### string translation table ####### -in this example, [str] is the class
+sampleStr = "The quick brown fox jumped over the lazy dog"
+eliteTransTable = str.maketrans("abegilostz", "4636110572")
+print(sampleStr)
+print(sampleStr.translate(eliteTransTable))
+# Template string
+from string import Template
+the_template = Template("The quick brown $animal $action over the lazy dog")
+print(the_template.substitute(animal="fox", action="jumped"))
+# Format string
+date = "2019-04-23"
+meal = "lunch"
+print("Today's date is {0}. On {0}, you should go to {1}.\nYou should go to {1} on {0}.".format(date, meal))
+# formatting directives- lower and upper case hex, etc
+print("Output: Octal |{var2:o}|, lowerHex |{var2:x}|, upperHex |{var2:X}|".format(var2=bar))
+print("Output: Binary |{var2:b}|, Decimal |{var2:d}|, Character |{var2:c}|".format(var2=bar))
+# Interpolation with f-strings in Python 3.6
+# https://docs.python.org/3/library/string.html#custom-string-formatting
+import datetime
+product = "Widget"
+price = 19.99
+tax = 0.07
+nyd = datetime.datetime(2019,1,1)
+print(f"{product} has a price of {price}, with tax {tax:.2%} the total is {round(price+(price*tax),2)}")
+print(f"But only on {nyd:%B %d %Y}")
+
+
+write a python comprehension
+----------------------------
+result = "".join(c for c in test_string1 if c in string.ascii_letters)
+# comprehension to find the longest name
+names = ["Amy", "John", "George", "Michael", "Penelope"]
+longestLength = max(len(name) for name in names)
+
+# print(string.ascii_letters)
+# print(string.digits)
+# print(string.hexdigits)
+# print(string.punctuation)
+
+
+Python built-in functions
+-------------------------
+abs()	delattr()	hash()	memoryview()	set()
+all()	dict()	help()	min()	setattr()
+any()	dir()	hex()	next()	slice()
+ascii()	divmod()	id()	object()	sorted()
+bin()	enumerate()	input()	oct()	staticmethod()
+bool()	eval()	int()	open()	str()
+breakpoint()	exec()	isinstance()	ord()	sum()
+bytearray()	filter()	issubclass()	pow()	super()
+bytes()	float()	iter()	print()	tuple()
+callable()	format()	len()	property()	type()
+chr()	frozenset()	list()	range()	vars()
+classmethod()	getattr()	locals()	repr()	zip()
+compile()	globals()	map()	reversed()	__import__()
+complex()	hasattr()	max()	round()
+
+
+---------------------------------------------------------------------------
+==> Caveats
+Python has been installed as
+  /usr/local/bin/python3
+
+Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
+`python3`, `python3-config`, `pip3` etc., respectively, have been installed into
+  /usr/local/opt/python/libexec/bin
+
+If you need Homebrew's Python 2.7 run
+  brew install python@2
+
+You can install Python packages with
+  pip3 install <package>
+They will install into the site-package directory
+  /usr/local/lib/python3.7/site-packages
+
+See: https://docs.brew.sh/Homebrew-and-Python
+==> Summary
+🍺  /usr/local/Cellar/python/3.7.2_2: 3,861 files, 59.7MB
+==> `brew cleanup` has not been run in 30 days, running now...
+Removing: /usr/local/Cellar/openssl/1.0.2q... (1,794 files, 12.1MB)
+Removing: /Users/stevenayers/Library/Caches/Homebrew/openssl--1.0.2q.mojave.bottle.tar.gz... (3.7MB)
+Removing: /Users/stevenayers/Library/Caches/Homebrew/Cask/sublime-text--3.176.dmg... (12.9MB)
+Removing: /Users/stevenayers/Library/Caches/Homebrew/Cask/intellij-idea-ce--2018.3.4,183.5429.30.dmg... (513.7MB)
+Removing: /Users/stevenayers/Library/Caches/Homebrew/Cask/java--11.0.2,9.tar.gz... (174.2MB)
+Removing: /Users/stevenayers/Library/Caches/Homebrew/Cask/postman--6.7.3... (77.3MB)
+Removing: /Users/stevenayers/Library/Caches/Homebrew/Cask/atom--1.34.0.zip... (141.1MB)
+Removing: /Users/stevenayers/Library/Caches/Homebrew/Cask/slack--3.3.7.zip... (73.5MB)
+Removing: /Users/stevenayers/Library/Caches/Homebrew/Cask/dbeaver-community--5.3.5.dmg... (58.2MB)
+Removing: /Users/stevenayers/Library/Caches/Homebrew/Cask/google-chrome--72.0.3626.109.dmg... (72.8MB)
+Removing: /Users/stevenayers/Library/Logs/Homebrew/wget... (64B)
+Removing: /Users/stevenayers/Library/Logs/Homebrew/libidn2... (64B)
+Removing: /Users/stevenayers/Library/Logs/Homebrew/libunistring... (64B)
+Removing: /Users/stevenayers/Library/Logs/Homebrew/maven... (101B)
+Removing: /Users/stevenayers/Library/Logs/Homebrew/brew-cask-completion... (116B)
+Removing: /Users/stevenayers/Library/Logs/Homebrew/gettext... (64B)
+Removing: /Users/stevenayers/Library/Logs/Homebrew/openssl... (64B)
+Pruned 0 symbolic links and 2 directories from /usr/local
+==> Caveats
+==> openssl
+A CA file has been bootstrapped using certificates from the SystemRoots
+keychain. To add additional certificates (e.g. the certificates added in
+the System keychain), place .pem files in
+  /usr/local/etc/openssl/certs
+
+and run
+  /usr/local/opt/openssl/bin/c_rehash
+
+openssl is keg-only, which means it was not symlinked into /usr/local,
+because Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries.
+
+If you need to have openssl first in your PATH run:
+  echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.bash_profile
+
+For compilers to find openssl you may need to set:
+  export LDFLAGS="-L/usr/local/opt/openssl/lib"
+  export CPPFLAGS="-I/usr/local/opt/openssl/include"
+
+==> readline
+readline is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides the BSD libedit library, which shadows libreadline.
+In order to prevent conflicts when programs look for libreadline we are
+defaulting this GNU Readline installation to keg-only.
+
+For compilers to find readline you may need to set:
+  export LDFLAGS="-L/usr/local/opt/readline/lib"
+  export CPPFLAGS="-I/usr/local/opt/readline/include"
+
+==> sqlite
+sqlite is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides an older sqlite3.
+
+If you need to have sqlite first in your PATH run:
+  echo 'export PATH="/usr/local/opt/sqlite/bin:$PATH"' >> ~/.bash_profile
+
+For compilers to find sqlite you may need to set:
+  export LDFLAGS="-L/usr/local/opt/sqlite/lib"
+  export CPPFLAGS="-I/usr/local/opt/sqlite/include"
+
+==> python
+Python has been installed as
+  /usr/local/bin/python3
+
+Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
+`python3`, `python3-config`, `pip3` etc., respectively, have been installed into
+  /usr/local/opt/python/libexec/bin
+
+If you need Homebrew's Python 2.7 run
+  brew install python@2
+
+You can install Python packages with
+  pip3 install <package>
+They will install into the site-package directory
+  /usr/local/lib/python3.7/site-packages
+
+See: https://docs.brew.sh/Homebrew-and-Python
+Stevens-MacBook-Pro:Versions stevenayers$
+---------------------------------------------------------------------------
