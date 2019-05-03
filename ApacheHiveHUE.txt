@@ -3,6 +3,27 @@ ApacheHiveHUE.txt
 
 
 
+
+
+
+
+
+LEFT SEMI JOIN is like ANSI SQL clause EXISTS
+--------------
+# ANSI SQL
+SELECT *
+FROM a
+WHERE EXISTS (
+  SELECT *
+  FROM b
+  WHERE a.name = b.name
+)
+# HIVE
+SELECT *
+FROM a
+LEFT SEMI JOIN b ON a.name = b.name
+
+
 create table clients (
   Name string,
   Symbol string,
@@ -17,8 +38,8 @@ create table clients (
 row format serde 'com.bizo.hive.serde.csv.CSVSerde'
 stored as textfile;
 
-SQL
----
+ANSI SQL
+--------
 standard statement structure
 ----------------------------
 /* structure of select
