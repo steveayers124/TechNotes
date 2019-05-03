@@ -3,7 +3,19 @@ ApacheHiveHUE.txt
 
 
 
-
+create table clients (
+  Name string,
+  Symbol string,
+  LastSale double,
+  MarketCapLabel string,
+  MarketCapAmount bigint,
+  IPOyear int,
+  Sector string,
+  Industry string,
+  SummaryQuote string
+)
+row format serde 'com.bizo.hive.serde.csv.CSVSerde'
+stored as textfile;
 
 SQL
 ---
@@ -17,5 +29,5 @@ WHERE <filter conditions>
 GROUP BY <grouping>
 HAVING <aggregate filter>
 ORDER BY <column list in order>
-LIMIT <number of rows>
+LIMIT <number of rows>;
 */
