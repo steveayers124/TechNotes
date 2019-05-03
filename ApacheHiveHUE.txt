@@ -29,6 +29,22 @@ FROM a
 LEFT SEMI JOIN b ON a.name = b.name
 
 
+Nice synopsis of Inner, Left, and Full Outer joins
+https://www.lynda.com/Hive-tutorials/Combining-tables-JOIN/534413/573311-4.html?org=library.rogersar.gov
+
+Inner Join
+----------
+Joined sales table with products table, displaying sales for products, products for sales, provided both exist.
+
+Left Join
+----------
+Joined sales table with products table, displaying all sales and their products, even if no product is listed for a sale.
+
+Full Outer Join
+---------------
+Joined sales table with products table, displaying all sales and their products, plus even products that had no sales, along with sales having no products.
+
+
 create table clients (
   Name string,
   Symbol string,
