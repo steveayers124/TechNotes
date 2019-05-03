@@ -19,6 +19,21 @@ pip3 list
 
 
 
+SQL
+---
+standard statement structure
+----------------------------
+/* structure of select
+SELECT <columns>
+FROM <table>
+JOIN <other tables>
+WHERE <filter conditions>
+GROUP BY <grouping>
+HAVING <aggregate filter>
+ORDER BY <column list in order>
+LIMIT <number of rows>
+*/
+
 
 
 array
