@@ -315,3 +315,23 @@ They will install into the site-package directory
 See: https://docs.brew.sh/Homebrew-and-Python
 Stevens-MacBook-Pro:Versions stevenayers$
 ---------------------------------------------------------------------------
+
+
+Books
+-----
+Fluent Python
+"Python's simplicity lets you become productive quickly, but this often means you aren t using everything it has to offer. With this hands-on guide, you ll learn how to write effective, idiomatic Python code by leveraging its best and possibly most neglected features. ... Google Books
+Originally published: July 24, 2015
+Author: Luciano Ramalho
+
+Python Pocket Reference
+Python is a popular object-oriented scripting language that is freely available over the Net. It's portable, powerful, and remarkably easy to use. ... Google Books
+Originally published: 1998
+Author: Mark Lutz
+(This has no Python 3, of course)
+
+Head First Python, 2nd Ed
+
+---
+look up geosheets from Google
+add books for design patterns and refactoring
