@@ -101,3 +101,18 @@ HAVING <aggregate filter>
 ORDER BY <column list in order>
 LIMIT <number of rows>;
 */
+
+Alternatives to Tableau
+-----------------------
+RAWGraphs
+JetPack Data
+Metabase
+Apache Superset
+Power BI for Office 365, if you already have Office365
+QlikView
+Plotly
+Pentaho
+Bokeh is a python interactive visualization library that targets modern web browsers for presentation.
+Google Data Studio - Data visualization and business intelligence (BI) platform for aggregating, sharing, collaborating, and pulling insights from raw databases...
+Free Tableau Alternatives - AlternativeTo.net
+https://alternativeto.net/software/tableau/?license=free
