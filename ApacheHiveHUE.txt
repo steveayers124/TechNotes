@@ -5,11 +5,30 @@ for querying HADOOP
 
 
 
+
+
+
 Data Manipulation in HiveQL
 ---------------------------
+String functions, Math functions, Date functions, Conditionals
 String functions
+concat()   #create a new key value by combining strings
+lower()
+substr()
+trim()
+
 Math functions
+round()
+rand()    # mask data for security, or generate test data
+sqrt(), abs(), and all the rest...
+: don't use in HIVE. Instead, pull the data you want from HIVE, then use
+your analytics platform, Tableau or R or RAWGraphs or Apache Superset
+
+
+
 Date functions
+
+
 Conditionals
 
 
