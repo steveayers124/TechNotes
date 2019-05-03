@@ -1,7 +1,16 @@
 ApacheHiveHUE.txt
+HiveQL language
+for querying HADOOP
 
 
 
+
+Data Manipulation in HiveQL
+---------------------------
+String functions
+Math functions
+Date functions
+Conditionals
 
 
 
