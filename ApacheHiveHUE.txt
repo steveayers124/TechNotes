@@ -5,7 +5,9 @@ for querying HADOOP
 
 
 
-
+URL parts
+---------
+scheme, host, path, query string
 
 
 Data Manipulation in HiveQL
@@ -16,6 +18,8 @@ concat()   #create a new key value by combining strings
 lower()
 substr()
 trim()
+regexp_replace()
+SELECT lower(regexp_replace(name, '[^a-zA-Z0-9]+', '')) AS CustKey
 
 Math functions
 round()
