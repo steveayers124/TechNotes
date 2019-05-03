@@ -5,7 +5,12 @@ ApacheHiveHUE.txt
 
 
 
-
+# Cumulative joins in a query require caution that you don't invalidate results
+SELECT a.val, b.val, c.val
+FROM a
+JOIN b ON (a.key = b.key)
+LEFT OUTER JOIN c ON (a.key = c.key)
+# So the first in an inner join, and then we join additional info from c to those results.
 
 
 LEFT SEMI JOIN is like ANSI SQL clause EXISTS
