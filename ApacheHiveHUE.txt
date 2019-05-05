@@ -71,8 +71,32 @@ date_add(), date_sub()
 # diff between two dates
 datediff(projectcompletedate, orderdate) duration
 # calculate monthly aggregations using a date value
-
+-- get some stats by month
+select
+    productcategory,
+    productsubcategory,
+    year(orderdate) y,
+    month(orderdate) m,
+    avg(datediff(projectcompletedate, orderdate)) duration
+from sales_all_years
+group by
+    productcategory,
+    productsubcategory,
+    year(orderdate),
+    month(orderdate)
+order by
+    3,4
 # find last day of month from a date
+-- find the last day of the month: add a month; set to first day of that month; subtract a day.
+select distinct
+	date_sub(
+		to_date(
+			concat(cast(year(orderdate) as string),"-",cast(month(orderdate)+1 as string),"-01") -- 2009-02-01
+		)
+	,1 ),
+	orderdate
+from sales_all_years
+limit 100;
 
 
 Conditionals
