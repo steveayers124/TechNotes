@@ -68,6 +68,12 @@ to_date()                   # to work with a text field using date functions
 year(), month(), day()      # pull out parts of the date value
 datediff()                  # returns the days between two dates
 date_add(), date_sub()
+# diff between two dates
+datediff(projectcompletedate, orderdate) duration
+# calculate monthly aggregations using a date value
+
+# find last day of month from a date
+
 
 Conditionals
 if()
