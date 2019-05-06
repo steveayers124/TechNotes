@@ -2,6 +2,34 @@ ApacheHiveHUE.txt
 HiveQL language
 for querying HADOOP
 
+Completed a course on Lynda! Analyzing Big Data with Hive
+
+Additional courses to check out next:
+Foundations of Programming : Databases
+SQL Essential Training
+SQL for Data Reporting and Analysis
+
+Now, back to "Apache Spark Essential Training"
+"ArcGIS Pro Essential Training"
+"Python Standard Library Essential Training"
+
+
+What is stored in Hive for an External Table? HiveQL
+Tables in Hive have a schema. TRUE
+What type of tables are stored in the Hive Datawarehouse? managed
+What is stored in Hive for an External Table? definition
+What can you use to handle CSV files with quoted identifiers? Custom SerDe
+What type of partitions are typically used to shrink down table size? date partitions
+What function in Hive can you use to flatten data stored in arrays? EXPLODE()
+Grouping sets in Hive is a shortcut for performing what types of operations? aggregations
+In Hive, what does the CUBE function return? all possible aggregate combinations
+When does the HAVING clause apply its filter to your result set? after aggregations are complete
+Which filtering clause allows for a wildcard? LIKE
+Which join type only returns data from two tables where the join condition is true? inner join
+What type of Hive function allows for IF statements? Conditional
+Which function will return the number of days between two dates? datediff
+What does the abs() function do? returns the absolute value
+What does the abs() function do? concat
 
 
 
