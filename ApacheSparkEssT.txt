@@ -1,0 +1,20 @@
+ApacheSparkEssT.txt
+a fast and general engine for large-scale data processing
+began as a design for data science
+but now use cases include realtime stream event processing
+-SparkSQL -SparkStreaming -MLlib (machine learning) -GraphX
+
+
+Completed a course on Lynda! Apache Spark Essential Training
+
+
+Speed (DAG engine), Ease of use (Java, Scala, R, Python, ANSI SQL) [Tableau connects directly using SparkSQL], Generality, Platform agnostic nature
+text_file = spark.textFile("hdfs://...")
+text_file.flatMap(lambda line: line.split())
+  .map(lambda word: (word, 1))
+  .reduceByKey(lambda a, b: a+b)
+# word count in Spark's Python API, pySpark
+
+
+
+.
