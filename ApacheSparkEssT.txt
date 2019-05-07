@@ -13,7 +13,23 @@ Completed a course on Lynda! Apache Spark Essential Training
 
 
 
-
+---Begin brief history of Spark origins---
+Modern Data Ecosystems arose in 2004, with Hadoop.
+2003, Nutch project development began.
+2006, Yahoo hired those developers and released Hadoop as open source.
+2006, Google had created a Java interface for working its data called MapReduce.
+2008, Facebook provided its analysts and data scientists with an easier way
+ of working with data in Hadoop, in the creation of Hive.
+So MapReduce is batch oriented, Java based, and slow.
+And Hive is SQL abstraction atop MapReduce.
+So with the ease of writing queries, batch orientation and slowness persist.
+2009, to solve this, some at UC Berkley started a new project to provide easier
+ access to big data for data scientists. Spark.
+2010, that team open sourced Spark under the BSD license.
+2013, the UC Berkley team donated their code to Apache.
+2014, Spark became a top-level Apache project. So now Spark has the whole
+ community of data professionals supporting and evolving the platform.
+---End brief history of Spark origins---
 
 
 Speed (DAG engine), Ease of use (Spark notebooks, Java, Scala, R, Python, ANSI SQL) [Tableau connects directly using SparkSQL], Generality, Platform agnostic nature
