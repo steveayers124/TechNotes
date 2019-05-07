@@ -12,6 +12,49 @@ Completed a course on Lynda! Apache Spark Essential Training
 
 
 
+---Begin Component overview---
+Spark components
+Spark Core
+* foundation
+* Task distribution
+* Scheduling
+* I/O
+SparkSQL
+* ANSI standard SQL
+* Create/define table structures in Spark first. Then use SQL.
+* Allows Tableau and other tools to integrate.
+* Uses DataFrames.
+ Identical to R DataFrames.
+ Similar to Python pandas.
+ Like a SQL table.
+SparkStreaming
+* Streaming analytics
+* Micro batches - not true streaming, but its behavior comes close.
+* Lambda architecture
+ - use historic data to start
+ - then as new data comes in, continue to aggregate that data in the result
+ - as with Twitter followers, do initial query, but then only update the
+    aggregation. Don't re-query. That would just take far too long.
+MLlib
+* allows the machine learning algorithms to run
+* compared to Apache Mahout, which runs on disk instead of in-memory, 9x faster
+* many common ML functions, and others from the open source community
+GraphX
+* graph processing in Spark
+* is this traversing a graph data network?
+* run graph database jobs by
+ - id relationships between entities in your data,
+ - then query using those relationships
+* this is the in-memory version of Apache Giraph.
+* remember, based on dataframes (RDD),
+ so its not a true graph database implementation
+SparkR
+* R statistical package for Spark (2.0.1, new)
+* SparkR's distributed dataframes are comparable to data frames in R,
+ but employ Sparks method of distributing them on the cluster.
+* Integration point for R Studio
+---End Component overview---
+
 
 ---Begin brief history of Spark origins---
 Modern Data Ecosystems arose in 2004, with Hadoop.
