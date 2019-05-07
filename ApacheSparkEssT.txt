@@ -12,6 +12,35 @@ Completed a course on Lynda! Apache Spark Essential Training
 
 
 
+
+
+
+---Begin What Spark does well---
+Integration, Machine Learning, BI/Analytics, Real-Time Processing, Recommendation Engines
+Integration - ETL (Extract, Transform, and Load) to move and standardize data
+ML - find hidden patterns in vast data
+BI/Analytics - (data science as well) - highest demand, and Spark excels here
+Real-Time Processing - fraud detection and realtime user feedback
+Recommendation Engines - help users find more value to them in your service
+
+Which languages are people are using with Spark? [DataBricks survey]
+* Scala and Python top the list with SQL a close third (then Java, R)
+* Over time, may see a shift to SQL, the most universal data language.
+
+High BI/Anal usage reenforces that the basic idea of knowing what's
+ going on in with your business drives platform adoption,
+ and technology buying decisions.
+Close seconds are log processing and fraud detection and analysis.
+((1:Business intelligence,
+  2:Data Warehousing,
+  3:Streaming/RT,
+  4:Recommengines,
+  5:Log processing,
+  6:User facing services,
+  7:Fraud Detection and Security))
+---End What Spark does well---
+
+
 ---Begin Component overview---
 Spark components
 Spark Core
