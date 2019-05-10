@@ -12,6 +12,9 @@ Completed a course on Lynda! Apache Spark Essential Training
 
 
 ---Databricks---
+## Databricks is a Microsoft Azure, and Apache Spark based analytics platform
+##  designed for ease and collaboration in data analysis. See the Lynda course
+##  by Lynn Langit, "Azure Databricks Essential Training".
 
 ---Databricks---
 
