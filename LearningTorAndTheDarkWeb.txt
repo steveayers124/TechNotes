@@ -1,0 +1,17 @@
+LearningTorAndTheDarkWeb
+by Mike Chapple
+
+[Mike Chapple] Beneath the surface of the Internet that we use everyday lies a secret world of encrypted websites. This is the Dark Web. A collection of websites that use encryption technology to hide in plain sight. Users seeking to access these sites use a specialized tool called the Tor Browser to create connections to Dark Websites using strong encryption that protects their communications from prying eyes. The main benefit of Tor connections is that they guarantee anonymity. Not only are you protected against eavesdroppers, but if you use Tor properly, even the websites you visit will not have any way of knowing your identity. Website owners don't know the true identities of their users, and users don't know the true identity of website owners. It's a completely anonymized version of the Internet, hidden in plain sight. While criminals certainly find a home on the Dark Web, so do privacy-minded citizens, journalists, political dissidents and others. Hi, I'm Mike Chapple. I'm a cyber security expert, and I've been helping organizations navigate the Dark Web for years. In this course, we'll explore the technical and social concepts behind the Dark Web, and show you the tools that you'll need to access and host websites that are hiding in plain sight.
+
+This course is designed for students who are completely new to Tor and the dark web. You don't need any prior experience with networking or security to learn from this course. We will touch on some more technical material describing how the dark web uses encryption technology to preserve privacy and anonymity, but knowing that material isn't required to get up and running on the dark web. If you come across topics that seem too technical for your tastes, just skip over them and move on to the hands-on portion of the course. If you are interested in learning more about the technology behind the dark web, I'd suggest learning more about cryptography. I have an entire course on this site covering cryptography as part of my Security+ certification series. In that course you'll take a deep dive into some of the cryptographic concepts that we just briefly mention in this course.
+
+This course is designed for students who are completely new to Tor and the dark web. You don't need any prior experience with networking or security to learn from this course. We will touch on some more technical material describing how the dark web uses encryption technology to preserve privacy and anonymity, but knowing that material isn't required to get up and running on the dark web. If you come across topics that seem too technical for your tastes, just skip over them and move on to the hands-on portion of the course. If you are interested in learning more about the technology behind the dark web, I'd suggest learning more about cryptography. I have an entire course on this site covering cryptography as part of my Security+ certification series. In that course you'll take a deep dive into some of the cryptographic concepts that we just briefly mention in this course.
+
+
+
+
+
+
+
+
+
