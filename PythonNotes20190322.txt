@@ -335,8 +335,9 @@ Stevens-MacBook-Pro:Versions stevenayers$
 Books
 -----
 Cracking Codes With Python - Al Sweigart
-
+Automate the Boring Stuff With Python - Al Sweigart
 Math Adventures With Python - Peter Farrell
+Blackbelt Python
 
 
 Fluent Python
